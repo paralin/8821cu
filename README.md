@@ -271,7 +271,7 @@ sudo xbps-install linux-headers dkms git make
 If using pacman
 
 ```
-sudo pacman -S --noconfirm linux-headers dkms git
+sudo pacman -S --noconfirm linux-headers dkms git bc
 ```
 
 Note: If you are asked to choose a provider, make sure to choose the one

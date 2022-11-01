@@ -12,10 +12,6 @@ Files: hal/rtl8821c/hal8821c_fw.c
 Copyright: 2007-2020 Realtek Corporation. All rights reserved
 License: non-free
 
-Files: debian/*
-Copyright: 2021 Alexander Gerasiov <gq@debian.org>
-License: GPL-2
-
 License: non-free
  Though it is stated that the file is GPL-2 licensed, this is compiled
  BLOB firmware with no sources provided by Realtek. Thus tecnically makes
