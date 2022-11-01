@@ -5,12 +5,14 @@
 # Supports dkms and non-dkms installations.
 
 SCRIPT_NAME="install-driver.sh"
-SCRIPT_VERSION="20221018"
+SCRIPT_VERSION="20221031"
 MODULE_NAME="8821cu"
 DRV_VERSION="5.12.0"
 OPTIONS_FILE="${MODULE_NAME}.conf"
 
 KVER="$(uname -r)"
+KARCH="$(uname -m)"
+KSRC="/lib/modules/${KVER}/build"
 MODDESTDIR="/lib/modules/${KVER}/kernel/drivers/net/wireless/"
 
 DRV_NAME="rtl${MODULE_NAME}"
@@ -60,9 +62,9 @@ fi
 
 # information that helps with bug reports
 # kernel
-uname -r
+echo "Kernel=${KVER}"
 # architecture - for ARM: aarch64 = 64 bit, armv7l = 32 bit
-uname -m
+echo "Architecture=${KARCH}"
 #getconf LONG_BIT (may be handy in the future)
 
 # blacklist the in-kernel module (driver) so that there is no conflict
