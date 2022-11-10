@@ -5,7 +5,7 @@
 # Supports dkms and non-dkms installations.
 
 SCRIPT_NAME="install-driver.sh"
-SCRIPT_VERSION="20221031"
+SCRIPT_VERSION="20221101"
 MODULE_NAME="8821cu"
 DRV_VERSION="5.12.0"
 OPTIONS_FILE="${MODULE_NAME}.conf"
@@ -80,7 +80,7 @@ if ! command -v dkms >/dev/null 2>&1
 then
 	echo "The non-dkms installation routines are in use."
 
-	make clean
+	make clean >/dev/null 2>&1
 
 	make
 	RESULT=$?
@@ -140,6 +140,8 @@ else
 			echo "$ sudo ./remove-driver.sh"
 			exit $RESULT
 		fi
+	else
+		echo "The driver was added successfully."
 	fi
 
 	dkms build -m ${DRV_NAME} -v ${DRV_VERSION}
@@ -153,21 +155,23 @@ else
 		echo "Run the following before reattempting installation."
 		echo "$ sudo ./remove-driver.sh"
 		exit $RESULT
+	else
+		echo "The driver was built successfully."
 	fi
 
 	dkms install -m ${DRV_NAME} -v ${DRV_VERSION}
 	RESULT=$?
 
-	if [[ "$RESULT" = "0" ]]
+	if [[ "$RESULT" != "0" ]]
 	then
-		echo "The driver was installed successfully."
-	else
 		echo "An error occurred. dkms install error = ${RESULT}"
 		echo "Please report this error."
 		echo "Please copy all screen output and paste it into the report."
 		echo "Run the following before reattempting installation."
 		echo "$ sudo ./remove-driver.sh"
 		exit $RESULT
+	else
+		echo "The driver was installed successfully."
 	fi
 fi
 
