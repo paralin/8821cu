@@ -4,6 +4,9 @@
 
 - v5.12.0 (Realtek) (20210118) plus updates from the Linux community
 
+Note: Please read "supported-device-IDs" for information about how to
+confirm that this is the correct driver for your adapter.
+
 ### Features
 
 - IEEE 802.11 b/g/n/ac WiFi compliant
@@ -27,7 +30,6 @@
   * AP (see FAQ)
   * P2P-client
   * P2P-GO
-  * Concurrent (see `Concurrent_Mode.md` in the `docs` folder.)
 - Log level control
 - LED control
 - Power saving control
@@ -38,8 +40,10 @@
 
 ### Compatible CPUs
 
-- x86, amd64
-- ARM, ARM64
+- x86
+- x86-64 (amd64)
+- arm
+- arm64 (aarch64)
 
 ### Compatible Kernels
 
@@ -73,7 +77,7 @@ the Installation Steps can be improved.
 
 - Raspberry Pi Desktop (2022-07-01) (x86 32 bit) (kernel 5.10)
 
-- Ubuntu 22.04 (kernel 5.15)
+- Ubuntu 22.04 (kernel 5.15) and 22.10 (kernel 5.19)
 
 - Void Linux (kernel 5.18)
 
@@ -106,7 +110,6 @@ click [here](https://github.com/morrownr/USB-WiFi) for information about
 and links to recommended adapters.
 
 * Cudy WU700
-* BrosTrend AC5L
 * EDUP EP-AC1651
 * EDUP EP-AC1635
 * TOTOLINK A650UA v3
@@ -132,7 +135,7 @@ sudo dkms status
 ```
 
 Warning: If you decide to upgrade to a new version of kernel such as
-5.18 to 5.19, you need to remove the driver you have installed and
+5.15 to 5.19, you need to remove the driver you have installed and
 install the newest available before installing the new kernel. Use the
 following commands in the driver directory:
 
@@ -307,16 +310,7 @@ git clone https://github.com/morrownr/8821cu-20210118.git
 cd ~/src/8821cu-20210118
 ```
 
-#### Step 8: (optional) Enable Concurrent Mode ( cmode-on.sh )
-
-Note: see `Concurrent_Mode.md` in the `docs` folder to help determine
-whether you want to enable Concurrent Mode.
-
-```
-./cmode-on.sh
-```
-
-#### Step 9: Run a script to reconfigure for ARM or ARM64 based systems
+#### Step 8: Run a script to reconfigure for ARM or ARM64 based systems
 
 Warning: This driver defaults to supporting x86 and amd64 based systems
 and this step should be `skipped` if your system is powered by an x86, 
@@ -358,7 +352,7 @@ discover the settings and make a new script that works with your ARM or
 ARM64 based system, you are welcome to submit the script and information
 to be included here.
 
-#### Step 10: Run the installation script ( install-driver.sh )
+#### Step 9: Run the installation script ( install-driver.sh )
 
 Note: For automated builds (non-interactive), use _NoPrompt_ as an option.
 
