@@ -14,6 +14,7 @@ EXTRA_CFLAGS += -Wno-unused-variable
 #EXTRA_CFLAGS += -Wno-unused-function
 #EXTRA_CFLAGS += -Wno-unused
 #EXTRA_CFLAGS += -Wno-uninitialized
+#EXTRA_CFLAGS += -Wno-vla
 EXTRA_CFLAGS += -Wno-misleading-indentation
 EXTRA_CFLAGS += -Wno-implicit-fallthrough
 #EXTRA_CFLAGS += -DCONFIG_CONCURRENT_MODE
@@ -110,7 +111,7 @@ EXTRA_CFLAGS += -DCONFIG_RTW_ANDROID=$(CONFIG_RTW_ANDROID)
 endif
 
 ########################## Debug ###########################
-CONFIG_RTW_DEBUG = n
+CONFIG_RTW_DEBUG = y
 # default log level is _DRV_INFO_ = 4,
 # please refer to "How_to_set_driver_debug_log_level.doc" to set the available level.
 CONFIG_RTW_LOG_LEVEL = 0

@@ -1,5 +1,16 @@
 ## 8821cu ( 8821cu.ko ) :rocket:
 
+Notice: Myself and another individual have been working to bring a new
+version of this driver online. It is based on new source code from
+Realtek and it appears to fix a few things. We are also taking the
+opportunity to greatly enhance the installation and removal scripts as
+well as the README. This work will then be used on all Realtek drivers
+located at this site so it is important that we test. Testing is
+currently being done in a private repo with an expected release during
+the first quarter of next year.
+
+If you are interested in testing, please see issue #73. 
+
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8811CU, RTL8821CU and RTL8731AU Chipsets
 
 - v5.12.0 (Realtek) (20210118) plus updates from the Linux community
@@ -57,7 +68,7 @@ is easy to install and works reliably on many distros. Meeting this goal
 depends on you to report your recommendations and updated information. 
 If you see information that needs to be updated, please report the
 updated information and if you do not see adequate support for
-items such as Installation Steps 2, 3 and 9, and you know what updates 
+items such as Installation Steps 2, 3 and 8, and you know what updates 
 need to added or you can get that information, please provide it so that
 the Installation Steps can be improved.
 
@@ -106,8 +117,8 @@ lack of mac80211 technology drivers that are supported in-kernel as
 called for by Linux Wireless Standards. This repo is supported for the
 benefit of Linux users who already have adapters based on the supported
 chipsets. If you are looking for information about what adapter to buy,
-click [here](https://github.com/morrownr/USB-WiFi) for information about
-and links to recommended adapters.
+click [here](https://github.com/morrownr/USB-WiFi) and look for Main Menu
+item 2 which will show information about and links to recommended adapters.
 
 * Cudy WU700
 * EDUP EP-AC1651
@@ -115,8 +126,6 @@ and links to recommended adapters.
 * TOTOLINK A650UA v3
 * Mercusys MU6H (multi-state)
 * Numerous additional products that are based on the supported chipsets
-
-Note: Please read "supported-device-IDs" for information about how to confirm the correct driver for your adapter.
 
 ### Installation Information
 
@@ -254,7 +263,7 @@ sudo apt install -y build-essential dkms git
 - Option for Fedora
 
 ```
-sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+sudo dnf -y install git dkms kernel-devel openssl
 ```
 
 - Option for openSUSE
