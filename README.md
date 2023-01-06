@@ -9,7 +9,7 @@ located at this site so it is important that we test. Testing is
 currently being done in a private repo with an expected release during
 the first quarter of next year.
 
-If you are interested in testing, please see issue #73. 
+If you are interested in testing, please see issue #73.
 
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8811CU, RTL8821CU and RTL8731AU Chipsets
 
@@ -48,7 +48,7 @@ confirm that this is the correct driver for your adapter.
 
 ### A FAQ is available at the end of this document.
 
-### Additional documentation is the file `8821u.conf`.
+### Additional documentation is the file `8821cu.conf`.
 
 ### Compatible CPU Architectures
 
