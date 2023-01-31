@@ -1,15 +1,17 @@
 ## 8821cu ( 8821cu.ko ) :rocket:
 
-Notice: Myself and others have been working to bring a new
-version of this driver online. It is based on new source code from
-Realtek and it appears to fix a few things. We are also taking the
-opportunity to greatly enhance the installation and removal scripts as
-well as the README. This work will then be used on all Realtek drivers
-located at this site so it is important that we test. Testing is
-currently being done in a private repo with an expected release during
-the first quarter of next year.
+Notice: A new version of this driver is now available:
 
-If you are interested in testing, please see issue #73.
+https://github.com/morrownr/8821cu
+
+The above link is the permenent link that will always show
+the link to the most current version of this driver.
+
+The new driver has many improvements. MU-MIMO is now supported
+
+This repo will be taken down soon.
+
+Nick
 
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8811CU, RTL8821CU and RTL8731AU Chipsets
 
